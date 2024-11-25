@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSuppliers));
             label1 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
+            txtSupID = new TextBox();
             label3 = new Label();
             label4 = new Label();
-            textBox2 = new TextBox();
+            txtSupName = new TextBox();
             label5 = new Label();
-            txtContrName = new TextBox();
+            txtContr = new TextBox();
             label6 = new Label();
             txtTel = new TextBox();
             label7 = new Label();
@@ -44,8 +44,10 @@
             btnAdd = new Button();
             btnEdit = new Button();
             btnDelete = new Button();
-            dataGridView1 = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            dgvShow = new DataGridView();
+            txtEmail = new TextBox();
+            label8 = new Label();
+            ((System.ComponentModel.ISupportInitialize)dgvShow).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -55,7 +57,7 @@
             label1.Location = new Point(-1, 0);
             label1.Margin = new Padding(5, 0, 5, 0);
             label1.Name = "label1";
-            label1.Size = new Size(958, 39);
+            label1.Size = new Size(990, 39);
             label1.TabIndex = 0;
             label1.Text = "ຟອມຂໍ້ມູນຜູ້ສະໜອງ";
             label1.TextAlign = ContentAlignment.TopCenter;
@@ -70,12 +72,12 @@
             label2.TabIndex = 1;
             label2.Text = "ຮັບຂໍ້ມູນຜູ້ສະໜອງ";
             // 
-            // textBox1
+            // txtSupID
             // 
-            textBox1.Location = new Point(223, 109);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(476, 41);
-            textBox1.TabIndex = 2;
+            txtSupID.Location = new Point(223, 109);
+            txtSupID.Name = "txtSupID";
+            txtSupID.Size = new Size(476, 41);
+            txtSupID.TabIndex = 2;
             // 
             // label3
             // 
@@ -97,12 +99,12 @@
             label4.TabIndex = 4;
             label4.Text = "ຊື່ບໍລີສັດ:";
             // 
-            // textBox2
+            // txtSupName
             // 
-            textBox2.Location = new Point(223, 157);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(722, 41);
-            textBox2.TabIndex = 5;
+            txtSupName.Location = new Point(223, 157);
+            txtSupName.Name = "txtSupName";
+            txtSupName.Size = new Size(722, 41);
+            txtSupName.TabIndex = 5;
             // 
             // label5
             // 
@@ -114,12 +116,12 @@
             label5.TabIndex = 6;
             label5.Text = "ຊື່ຜູ້ຕິດຕໍ່:";
             // 
-            // txtContrName
+            // txtContr
             // 
-            txtContrName.Location = new Point(223, 207);
-            txtContrName.Name = "txtContrName";
-            txtContrName.Size = new Size(722, 41);
-            txtContrName.TabIndex = 7;
+            txtContr.Location = new Point(223, 207);
+            txtContr.Name = "txtContr";
+            txtContr.Size = new Size(722, 41);
+            txtContr.TabIndex = 7;
             // 
             // label6
             // 
@@ -161,7 +163,7 @@
             btnAdd.ForeColor = SystemColors.Control;
             btnAdd.Image = (Image)resources.GetObject("btnAdd.Image");
             btnAdd.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAdd.Location = new Point(223, 390);
+            btnAdd.Location = new Point(223, 429);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(139, 55);
             btnAdd.TabIndex = 12;
@@ -175,7 +177,7 @@
             btnEdit.ForeColor = SystemColors.ControlLightLight;
             btnEdit.Image = (Image)resources.GetObject("btnEdit.Image");
             btnEdit.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEdit.Location = new Point(478, 390);
+            btnEdit.Location = new Point(480, 429);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(154, 55);
             btnEdit.TabIndex = 13;
@@ -189,7 +191,7 @@
             btnDelete.ForeColor = SystemColors.Control;
             btnDelete.Image = (Image)resources.GetObject("btnDelete.Image");
             btnDelete.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDelete.Location = new Point(716, 390);
+            btnDelete.Location = new Point(717, 429);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(133, 55);
             btnDelete.TabIndex = 14;
@@ -197,22 +199,41 @@
             btnDelete.TextAlign = ContentAlignment.MiddleRight;
             btnDelete.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // dgvShow
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(-1, 451);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(958, 202);
-            dataGridView1.TabIndex = 15;
+            dgvShow.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvShow.Location = new Point(18, 503);
+            dgvShow.Name = "dgvShow";
+            dgvShow.RowHeadersWidth = 51;
+            dgvShow.Size = new Size(958, 202);
+            dgvShow.TabIndex = 15;
+            // 
+            // txtEmail
+            // 
+            txtEmail.Location = new Point(223, 382);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(476, 41);
+            txtEmail.TabIndex = 16;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Phetsarath OT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(156, 388);
+            label8.Name = "label8";
+            label8.Size = new Size(61, 29);
+            label8.TabIndex = 17;
+            label8.Text = "ອີເມວ:";
             // 
             // frmSuppliers
             // 
             AutoScaleDimensions = new SizeF(13F, 34F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoValidate = AutoValidate.EnableAllowFocusChange;
-            ClientSize = new Size(957, 665);
-            Controls.Add(dataGridView1);
+            ClientSize = new Size(988, 717);
+            Controls.Add(label8);
+            Controls.Add(txtEmail);
+            Controls.Add(dgvShow);
             Controls.Add(btnDelete);
             Controls.Add(btnEdit);
             Controls.Add(btnAdd);
@@ -220,19 +241,19 @@
             Controls.Add(label7);
             Controls.Add(txtTel);
             Controls.Add(label6);
-            Controls.Add(txtContrName);
+            Controls.Add(txtContr);
             Controls.Add(label5);
-            Controls.Add(textBox2);
+            Controls.Add(txtSupName);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(textBox1);
+            Controls.Add(txtSupID);
             Controls.Add(label2);
             Controls.Add(label1);
             Font = new Font("Phetsarath OT", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(5);
             Name = "frmSuppliers";
             Text = "frmSuppliers";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvShow).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -241,12 +262,12 @@
 
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox txtSupID;
         private Label label3;
         private Label label4;
-        private TextBox textBox2;
+        private TextBox txtSupName;
         private Label label5;
-        private TextBox txtContrName;
+        private TextBox txtContr;
         private Label label6;
         private TextBox txtTel;
         private Label label7;
@@ -254,6 +275,8 @@
         private Button btnAdd;
         private Button btnEdit;
         private Button btnDelete;
-        private DataGridView dataGridView1;
+        private DataGridView dgvShow;
+        private TextBox txtEmail;
+        private Label label8;
     }
 }
